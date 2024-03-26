@@ -1,13 +1,11 @@
-"use client"
-import HeroBanner from "@/components/HeroBanner";
-import Image from "next/image";
+"use client";
+import React, { useState, useEffect } from "react";
 import Wrapper from "@/components/Wrapper";
 import ProductCard from "@/components/ProductCard";
-import { useState, useEffect } from "react";
-import { fetchDataFromApi } from "@/utils/api";
-import MySkeleton from "@/components/MySkelton";
 
-export default function Home() {
+import { fetchDataFromApi } from "@/utils/api";
+import MySkelton from "@/components/MySkelton";
+const AllCategoryPage = () => {
   const [allProducts, setAllProducts] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -19,25 +17,16 @@ export default function Home() {
     };
     fetchProducts();
   }, []);
-
   return (
-    <main className="w-full">
-      <HeroBanner />
+    <div className="w-full md:py-5">
       <Wrapper>
-        {/* heading and para---------------- */}
-        <div className="text-center max-w-[800px] mx-auto my-[50px] md:my-[80px]">
-          <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
-            Cushioning for Your Miles
-          </div>
-          <div>
-            Experience the difference with our advanced cushioning technology
-            designed to enhance your every step.
+        <div className="text-center max-w-[800px] mx-auto mt-8 md:mt-0">
+          <div className="text-[20px] md:text-[28px] mb-5 font-semibold">
+            All Products
           </div>
         </div>
-
-        {/* ----------products collection-------------- */}
         {isLoading ? (
-          <MySkeleton />
+          <MySkelton />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-14 px-5 md:px-0">
             {allProducts &&
@@ -46,9 +35,9 @@ export default function Home() {
               ))}
           </div>
         )}
-
-        
       </Wrapper>
-    </main>
+    </div>
   );
-}
+};
+
+export default AllCategoryPage;
