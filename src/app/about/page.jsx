@@ -30,7 +30,7 @@ const AboutPage = () => {
               <p className="mt-4 text-gray-600">
                 Our mission goes beyond just selling shoes; we strive to inspire
                 and empower every athlete, from the elite to the everyday
-                enthusiast. Whether you're a professional athlete chasing
+                enthusiast. Whether you&apos;re a professional athlete chasing
                 records or a weekend warrior chasing your personal best, Nike is
                 here to support you on your journey.
               </p>
