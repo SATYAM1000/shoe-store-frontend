@@ -9,7 +9,7 @@ const OrderSuccess = () => {
         </p>
 
         <h2 className="mt-6 text-3xl font-bold">
-          Thanks for your purchase, we're getting it ready!
+          Thanks for your purchase, we&apos;sre getting it ready!
         </h2>
 
         <a
